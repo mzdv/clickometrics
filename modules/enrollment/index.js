@@ -1,19 +1,19 @@
-var readline = require('readline');
-var database = require('../database');
+import readline from 'readline';
+import database from '../database';
 
-var enrollment = function() {
-    // var timer = {
+export default function() {
+    // let timer = {
     //     letter: 0,
     //     word: 0,
     //     shortSentence: 0,
     //     longSentence: 0
     // };
 
-    var inputStream = readline.createInterface({
+    let inputStream = readline.createInterface({
         input: process.stdin
     });
 
-    inputStream.question('Please enter your name: ', function (name) {
+    inputStream.question('Please enter your name: ', (name) => {
         inputStream.close();
 
         readline.emitKeypressEvents(process.stdin);
@@ -25,10 +25,8 @@ var enrollment = function() {
             process.exit();
         }
 
-        process.stdin.on('keypress', function (key, data) {
+        process.stdin.on('keypress', (key, data) => {
             console.log('Not yet implemented');
         });
     });
 };
-
-module.exports = enrollment;

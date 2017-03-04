@@ -38,6 +38,6 @@ const VERIFICATION = [
     'The purpose of morality is to teach you, not to suffer and die, but to enjoy yourself and live.'
 ];
 
-module.exports.shortSentences = {data: SHORT_SENTENCES, length: 36};
-module.exports.longSentences = {data: LONG_SENTENCES, length: 140};
-module.exports.verification = {data: VERIFICATION, length: 166};
+export const shortSentences = {data: SHORT_SENTENCES, length: 36};
+export const longSentences = {data: LONG_SENTENCES, length: 140};
+export const verification = {data: VERIFICATION, length: 166};

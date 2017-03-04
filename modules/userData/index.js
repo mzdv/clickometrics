@@ -1,11 +1,11 @@
-var data = require('./userData.json');
+import data from './userData.json';
 
-var userData = {
+export default userData = {
     get: function() {
         return data;
     },
     set: function(name, letter, word, shortSentence, longSentence, average) {
-        var result = null;
+        let result = null;
 
         data.push({
             name: name,
@@ -16,7 +16,7 @@ var userData = {
             average: average
         });
 
-        fs.writeFile('userData.json', JSON.stringify(data), function (err) {
+        fs.writeFile('userData.json', JSON.stringify(data), (err) => {
             if (err) {
                 result = err;
             } else {
@@ -27,5 +27,3 @@ var userData = {
         return result;
     }
 };
-
-module.exports = userData;

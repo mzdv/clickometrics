@@ -1,8 +1,6 @@
-var userData = require('../userData');
-var verificationDatabase = require('../database').verification;
+import userData from './userData';
+import verificationDatabase from '../database';
 
-var verification = function () {
+export default function () {
     console.log('Not yet implemented');
 };
-
-module.exports = verification;

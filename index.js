@@ -1,5 +1,5 @@
-var enrollment = require('./modules/enrollment');
-var verification = require('./modules/verification');
+import enrollment from './modules/enrollment';
+import verification from './modules/verification';
 
 if(process.argv[1]) {
     if (process.argv[1] === '--enroll' || process.argv[1] === '-e') {
