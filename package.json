@@ -1,7 +1,7 @@
 {
   "name": "clickometrics",
   "version": "1.0.0",
-  "description": "Key dynamics biometrics PoC written in Javascript",
+  "description": "Keystroke dynamics biometrics PoC written in Javascript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
