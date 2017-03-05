@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/mzdv/clickometrics/issues"
   },
-  "homepage": "https://github.com/mzdv/clickometrics#readme"
+  "homepage": "https://github.com/mzdv/clickometrics#readme",
+  "dependencies": {
+    "async": "^2.1.5"
+  }
 }

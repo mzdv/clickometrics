@@ -23,7 +23,7 @@ Running
 
 Must run it from the terminal using `node index.js --enrollment` if you want to enroll your keystroke data.
 
-If you want to verify your keystroke data, run it from the terminal using `node index.js --verification`
+If you want to verify your keystroke data, run it from the terminal using `node index.js --verification`.
 
 
 License

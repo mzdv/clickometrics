@@ -1,32 +1,46 @@
+import series from 'async/series';
 import readline from 'readline';
-import database from '../database';
 
-export default function() {
-    // let timer = {
-    //     letter: 0,
-    //     word: 0,
-    //     shortSentence: 0,
-    //     longSentence: 0
-    // };
+import database from '../database';
+import gatherResponses from '../utils';
+import userData from '../userData';
+
+export default function () {
+    let timer = {
+        letter: 0,
+        word: 0,
+        shortSentence: 0,
+        longSentence: 0
+    };
 
     let inputStream = readline.createInterface({
         input: process.stdin
     });
 
-    inputStream.question('Please enter your name: ', (name) => {
-        inputStream.close();
+    readline.emitKeypressEvents(process.stdin);
 
-        readline.emitKeypressEvents(process.stdin);
+    if (process.stdin.setRawMode) {
+        process.stdin.setRawMode(true);
+    } else {
+        console.log('You aren\'t running from the terminal!');
+        process.exit();
+    }
 
-        if (process.stdin.setRawMode) {
-            process.stdin.setRawMode(true);
+    series([
+        gatherResponses(database.shortSentence, inputStream, callback),
+        gatherResponses(database.longSentence, inputStream, callback)
+    ], function(err) {
+        if (err) {
+            console.error(err);
         } else {
-            console.log('You aren\'t running from the terminal!');
-            process.exit();
+            console.log('Enrollment data acquisition  done!\n');
+            inputStream.question('What is your name? ', (name) => {
+                userData.set(name, timer.letter, timer.word, timer.shortSentence, timer.longSentence)
+            });
         }
+    });
 
-        process.stdin.on('keypress', (key, data) => {
-            console.log('Not yet implemented');
-        });
+    process.stdin.on('keypress', (key, data) => {
+        // logic to gather times
     });
 };
