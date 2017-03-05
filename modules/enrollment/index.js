@@ -46,7 +46,7 @@ export default function () {
         } else {
             console.log('Enrollment data acquisition done!\n');
             inputStream.question('What is your name? ', (name) => {
-                console.log(userData.set(name, timer.letter, timer.word, timer.sentence));
+                console.log(userData.set(name, timer.letter / counters.letter, timer.word / counters.word, timer.sentence / counters.sentence));
             });
         }
     });

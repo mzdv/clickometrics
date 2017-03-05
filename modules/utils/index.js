@@ -1,12 +1,12 @@
 import times from 'async/times';
 
-let randomEnrollmentData = function (databaseObject) {
+export function randomDataSource(databaseObject) {
     return databaseObject.data[Math.floor(Math.random() * 10)];
-};
+}
 
 export default function (databaseObject, inputStream, callback) {
     times(7, function (n, next) {
-        inputStream.question(randomEnrollmentData(databaseObject), () => {
+        inputStream.question(randomDataSource(databaseObject), () => {
             next(err);
         });
     }, function (err) {

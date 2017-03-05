@@ -4,7 +4,7 @@ export default userData = {
     get: function() {
         return data;
     },
-    set: function(name, letter, word, sentence, average) {
+    set: function(name, letter, word, sentence) {
         let result = null;
 
         data.push({
@@ -12,7 +12,7 @@ export default userData = {
             letter: letter,
             word: word,
             sentence: sentence,
-            average: average
+            average: (name + letter + word + sentence) / 4
         });
 
         fs.writeFile('userData.json', JSON.stringify(data), (err) => {
