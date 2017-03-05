@@ -27,9 +27,9 @@ const LONG_SENTENCES = [
 const VERIFICATION = [
     'A creative man is motivated by the desire to achieve, not by the desire to beat others.',
     'The hardest thing to explain is the glaringly evident which everybody had decided not to see.',
-    'The question isn\'t who is going to let me; it\'s who is going to stop me.',
+    'The question isn`t who is going to let me; it`s who is going to stop me.',
     'Whenever you think you are facing a contradiction, check your premises.',
-    'Happiness is that state of consciousness which proceeds from the achievement of one\'s values.',
+    'Happiness is that state of consciousness which proceeds from the achievement of one`s values.',
     'The hardest thing to explain is the glaringly evident which everybody has decided not to see.',
     'The man who does not value himself, cannot value anything or anyone.',
     'The truth is not for all men but only for those who seek it.',
@@ -38,6 +38,8 @@ const VERIFICATION = [
     'The purpose of morality is to teach you, not to suffer and die, but to enjoy yourself and live.'
 ];
 
-export const shortSentences = {data: SHORT_SENTENCES, length: 36};
-export const longSentences = {data: LONG_SENTENCES, length: 140};
-export const verification = {data: VERIFICATION, length: 166};
+const shortSentences = {data: SHORT_SENTENCES, numberOfWords: 36, numberOfLetters: 267};
+const longSentences = {data: LONG_SENTENCES, numberOfWords: 140, numberOfLetters: 801};
+const verification = {data: VERIFICATION, numberOfWords: 166, numberOfLetters: 934};
+
+export default database = {shortSentences: shortSentences, longSentences: longSentences, verification: verification}

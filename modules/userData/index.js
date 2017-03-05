@@ -4,15 +4,14 @@ export default userData = {
     get: function() {
         return data;
     },
-    set: function(name, letter, word, shortSentence, longSentence, average) {
+    set: function(name, letter, word, sentence, average) {
         let result = null;
 
         data.push({
             name: name,
             letter: letter,
             word: word,
-            shortSentence: shortSentence,
-            longSentence: longSentence,
+            sentence: sentence,
             average: average
         });
 
