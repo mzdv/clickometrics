@@ -1,10 +1,11 @@
-import enrollment from './modules/enrollment';
-import verification from './modules/verification';
+const enrollment = require('./modules/enrollment');
+const verification = require('./modules/verification');
 
-if(process.argv[1]) {
-    if (process.argv[1] === '--enroll' || process.argv[1] === '-e') {
+
+if(process.argv[2]) {
+    if (process.argv[2] === '--enroll' || process.argv[2] === '-e') {
         enrollment();
-    } else if (process.argv[1] === '--verify' || process.argv[1] === '-v') {
+    } else if (process.argv[2] === '--verify' || process.argv[2] === '-v') {
         verification();
     } else {
         console.log('Whoops, unknown parameter.');

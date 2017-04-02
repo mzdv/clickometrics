@@ -1,10 +1,9 @@
-import readline from 'readline';
+const readline = require('readline');
+const userData = require('../userData');
+const database = require('../database');
+const util = require('../utils');
 
-import userData from '../userData';
-import database from '../database';
-import randomDataSource from '../utils';
-
-export default function () {
+module.exports = function () {
     let timer = {
         letter: 0,
         word: 0,
@@ -36,7 +35,7 @@ export default function () {
         process.exit();
     }
 
-    inputStream.question(database.verification.data[randomDataSource(database.verification)], () => {
+    inputStream.question(util.randomDataSource(database.verification), () => {
         inputStream.close();
 
         console.log('Verifying, please stand by');

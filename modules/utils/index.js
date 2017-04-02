@@ -1,10 +1,10 @@
-import times from 'async/times';
+const times = require('async').times;
 
-export function randomDataSource(databaseObject) {
+let randomDataSource = function (databaseObject) {
     return databaseObject.data[Math.floor(Math.random() * 10)];
 }
 
-export default function (databaseObject, inputStream, callback) {
+let gatherDataSources = function (databaseObject, inputStream, callback) {
     times(7, function (n, next) {
         inputStream.question(randomDataSource(databaseObject), () => {
             next(err);
@@ -16,4 +16,11 @@ export default function (databaseObject, inputStream, callback) {
             inputStream.close();
         }
     });
-};
+}
+
+let utils = {
+    randomDataSource: randomDataSource,
+    gatherDataSources: gatherDataSources
+}
+
+module.exports = utils;

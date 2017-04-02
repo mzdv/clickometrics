@@ -1,11 +1,11 @@
-import series from 'async/series';
-import readline from 'readline';
+const series = require('async').series;
+const readline = require('readline');
 
-import database from '../database';
-import gatherResponses from '../utils';
-import userData from '../userData';
+const database = require('../database');
+const utils = require('../utils');
+const userData = require('../userData');
 
-export default function () {
+module.exports = function () {
     let timer = {
         letter: 0,
         word: 0,
@@ -38,9 +38,21 @@ export default function () {
     }
 
     series([
-        gatherResponses(database.shortSentences, inputStream, callback),
-        gatherResponses(database.longSentences, inputStream, callback)
-    ], function(err) {
+        function (callback) {
+            utils.gatherDataSources(database.shortSentences, inputStream, err => {
+                if (err) {
+                    callback(err);
+                }
+            });
+        },
+        function (callback) {
+            utils.gatherDataSources(database.longSentences, inputStream, err => {
+                if (err) {
+                    callback(err);
+                }
+            });
+        }
+    ], function (err) {
         if (err) {
             console.error(err);
         } else {

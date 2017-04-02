@@ -1,6 +1,6 @@
-import data from './userData.json';
+const data = require('./userData.json');
 
-export default userData = {
+module.exports = {
     get: function() {
         return data;
     },

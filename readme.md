@@ -21,9 +21,9 @@ gathered data is correct and to see the percentage of match between verification
 Running
 =======
 
-Must run it from the terminal using `node index.js --enrollment` if you want to enroll your keystroke data.
+Must run it from the terminal using `node index.js --enroll` or `node index.js -e` if you want to enroll your keystroke data.
 
-If you want to verify your keystroke data, run it from the terminal using `node index.js --verification`.
+If you want to verify your keystroke data, run it from the terminal using `node index.js --verify` or `node index.js -v`.
 
 
 License

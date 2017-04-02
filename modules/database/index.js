@@ -42,4 +42,4 @@ const shortSentences = {data: SHORT_SENTENCES, numberOfWords: 36, numberOfLetter
 const longSentences = {data: LONG_SENTENCES, numberOfWords: 140, numberOfLetters: 801};
 const verification = {data: VERIFICATION, numberOfWords: 166, numberOfLetters: 934};
 
-export default database = {shortSentences: shortSentences, longSentences: longSentences, verification: verification}
+module.exports = {shortSentences: shortSentences, longSentences: longSentences, verification: verification}
